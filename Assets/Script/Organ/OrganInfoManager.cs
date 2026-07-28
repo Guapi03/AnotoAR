@@ -65,6 +65,11 @@ public class OrganInfoManager : MonoBehaviour
 
     public void HideInfo()
     {
+        if (OrganVoiceManager.Instance != null)
+        {
+            OrganVoiceManager.Instance.StopVoice();
+        }
+
         infoPanel.SetActive(false);
 
         // 显示 Info Button
@@ -91,6 +96,11 @@ public class OrganInfoManager : MonoBehaviour
 
     public void ForceClose()
     {
+        if (OrganVoiceManager.Instance != null)
+        {
+            OrganVoiceManager.Instance.StopVoice();
+        }
+
         if (infoPanel != null)
             infoPanel.SetActive(false);
 

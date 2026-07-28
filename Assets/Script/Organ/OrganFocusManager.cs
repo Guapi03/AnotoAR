@@ -68,6 +68,11 @@ public class OrganFocusManager : MonoBehaviour
 
         currentInteractable = organ;
         currentOrgan = organ.transform;
+
+        if (OrganVoiceManager.Instance != null)
+        {
+            OrganVoiceManager.Instance.SetCurrentOrgan(organ);
+        }
         
         if (OrganInfoManager.Instance != null)
         {
@@ -224,6 +229,11 @@ public class OrganFocusManager : MonoBehaviour
     
     public void ExitFocus()
     {
+        if (OrganVoiceManager.Instance != null)
+        {
+            OrganVoiceManager.Instance.StopVoice();
+        }
+        
         if (OrganInfoManager.Instance != null)
         {
             OrganInfoManager.Instance
@@ -322,6 +332,16 @@ public class OrganFocusManager : MonoBehaviour
     }
     public void ForceExitFocus()
     {
+        if (OrganVoiceManager.Instance != null)
+        {
+            OrganVoiceManager.Instance.StopVoice();
+        }
+
+        if (OrganInfoManager.Instance != null)
+        {
+            OrganInfoManager.Instance.ForceClose();
+        }
+        
         StopAllCoroutines();
 
         if (currentOrgan != null)

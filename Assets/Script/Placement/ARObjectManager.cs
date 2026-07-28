@@ -27,6 +27,9 @@ public class ARObjectManager : MonoBehaviour
     [Range(1, 30)]
     public float disappearTime = 3f;
 
+    [Header("Debug")]
+    [SerializeField] private bool debugMode = false;
+
     private bool objectPlaced = false;
     private bool canPlace = true;
     private Quaternion originalRotation;
@@ -51,6 +54,18 @@ public class ARObjectManager : MonoBehaviour
         model.SetActive(false);
 
         menuButtonFader.HideInstant();
+
+        if (debugMode)
+        {
+            if (planeFinder != null)
+                planeFinder.SetActive(false);
+
+            if (groundPlaneStage != null)
+                groundPlaneStage.SetActive(true);
+
+            ShowModel();
+            ObjectPlaced();
+        }
     }
 
     public bool CanPlace()

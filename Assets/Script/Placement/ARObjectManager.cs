@@ -30,6 +30,10 @@ public class ARObjectManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool debugMode = false;
 
+    [Header("Plane Guide")]
+    public GameObject scanningFrame;
+    public GameObject doneScanningFrame;
+    
     private bool objectPlaced = false;
     private bool canPlace = true;
     private Quaternion originalRotation;
@@ -55,6 +59,11 @@ public class ARObjectManager : MonoBehaviour
 
         menuButtonFader.HideInstant();
 
+        if (!debugMode)
+        {
+            OnPlaneSearching();
+        }
+        
         if (debugMode)
         {
             if (planeFinder != null)
@@ -115,6 +124,11 @@ public class ARObjectManager : MonoBehaviour
         invisibleTimer = 0f;
 
         planeFinder.SetActive(false);
+        if (scanningFrame != null)
+            scanningFrame.SetActive(false);
+
+        if (doneScanningFrame != null)
+            doneScanningFrame.SetActive(false);
 
         if (organSystemManager != null)
         {
@@ -212,38 +226,45 @@ public class ARObjectManager : MonoBehaviour
         {
             focusManager.ForceExitFocus();
         }
+
         if (OrganInfoManager.Instance != null)
         {
             OrganInfoManager.Instance.ForceClose();
         }
-        
-        canPlace = true;
 
+        canPlace = true;
         objectPlaced = false;
         invisibleTimer = 0f;
-        
+
         if (menuController != null)
         {
             menuController.ForceCloseMenu();
         }
+
         menuButtonFader.Hide();
-        
+
+        // Show tracking lost notification
         if (notificationUI != null)
         {
             Debug.Log("CALL NOTIFICATION");
             notificationUI.ShowNotification();
+
+            // Wait for notification animation to finish
+            yield return new WaitForSeconds(2f);
         }
-        
-        yield return new WaitForSeconds(0.35f);
+        else
+        {
+            yield return new WaitForSeconds(0.35f);
+        }
 
         model.SetActive(false);
-        model.transform.rotation =
-            originalRotation;
 
-        model.transform.localScale =
-            Vector3.one;
+        model.transform.rotation = originalRotation;
+        model.transform.localScale = Vector3.one;
 
         planeFinder.SetActive(true);
+
+        OnPlaneSearching();
 
         if (placementWatcher != null)
         {
@@ -257,5 +278,23 @@ public class ARObjectManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         FaceUser();
+    }
+    
+    public void OnPlaneSearching()
+    {
+        if (scanningFrame != null)
+            scanningFrame.SetActive(true);
+
+        if (doneScanningFrame != null)
+            doneScanningFrame.SetActive(false);
+    }
+
+    public void OnPlaneDetected()
+    {
+        if (scanningFrame != null)
+            scanningFrame.SetActive(false);
+
+        if (doneScanningFrame != null)
+            doneScanningFrame.SetActive(true);
     }
 }

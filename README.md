@@ -18,15 +18,11 @@ The project explores interactive AR content that can be viewed through a support
 
 ## Project Demo
 
-<p align="center">
-  <a href="https://guapi03.github.io/AnotoAR/">
-    <img
-      src="https://img.youtube.com/vi/1MdkWUGiNzo/maxresdefault.jpg"
-      alt="AnotoAR project demo"
-      width="720"
-    >
-  </a>
-</p>
+
+
+https://github.com/user-attachments/assets/cd352a12-27cd-4ef9-b443-ee5be3c2a920
+
+
 
 <p align="center">
   <a href="https://guapi03.github.io/AnotoAR/">

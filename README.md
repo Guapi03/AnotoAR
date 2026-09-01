@@ -1,3 +1,36 @@
+outputs/README.md
+<div align="center">
+
+# AnotoAR
+
+An augmented reality project built with Unity and Vuforia Engine.
+
+[![Unity](https://img.shields.io/badge/Unity-6000.3.10f1-000000?logo=unity&logoColor=white)](https://unity.com/)
+[![Vuforia](https://img.shields.io/badge/Vuforia-11.4.4-5CB531)](https://developer.vuforia.com/)
+[![URP](https://img.shields.io/badge/URP-17.3.0-4C8BF5)](https://unity.com/srp/universal-render-pipeline)
+
+</div>
+
+## About
+
+AnotoAR is an augmented reality application developed with Unity and Vuforia Engine. It uses image-target tracking to present interactive AR content on supported mobile devices.
+
+## Project Demo
+
+https://github.com/user-attachments/assets/cd352a12-27cd-4ef9-b443-ee5be3c2a920
+
+<p align="center">
+  <a href="https://www.youtube.com/shorts/1MdkWUGiNzo">
+    <strong>Watch the demo on YouTube ↗</strong>
+  </a>
+</p>
+
+## Features
+
+- Image-target tracking with Vuforia Engine
+- Interactive augmented reality content
+- Universal Render Pipeline rendering
+- Unity Input System support
 - Mobile-device build support
 
 ## Technology Stack
@@ -100,3 +133,4 @@ Created by [Guapi03](https://github.com/Guapi03).
 ## License
 
 This repository does not currently include an open-source license. Unless a license is added, the project remains under the copyright of its author.
+Filter files

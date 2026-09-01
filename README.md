@@ -1,4 +1,3 @@
-outputs/README.md
 <div align="center">
 
 # AnotoAR
@@ -17,7 +16,10 @@ AnotoAR is an augmented reality application developed with Unity and Vuforia Eng
 
 ## Project Demo
 
-https://github.com/user-attachments/assets/cd352a12-27cd-4ef9-b443-ee5be3c2a920
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/cd352a12-27cd-4ef9-b443-ee5be3c2a920" width="520" controls></video>
+</div>
+
 
 <p align="center">
   <a href="https://www.youtube.com/shorts/1MdkWUGiNzo">

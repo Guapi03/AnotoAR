@@ -20,13 +20,6 @@ AnotoAR is an augmented reality application developed with Unity and Vuforia Eng
   <video src="https://github.com/user-attachments/assets/cd352a12-27cd-4ef9-b443-ee5be3c2a920" width="520" controls></video>
 </div>
 
-
-<p align="center">
-  <a href="https://www.youtube.com/shorts/1MdkWUGiNzo">
-    <strong>Watch the demo on YouTube ↗</strong>
-  </a>
-</p>
-
 ## Features
 
 - Image-target tracking with Vuforia Engine
